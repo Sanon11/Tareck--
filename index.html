@@ -1,20 +1,76 @@
 ```html
 <!DOCTYPE html>
-<html langue="fr">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Analyse Diagramme</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Chargement Chart.js avant script.js -->
+  <title>TITO'S STATISTIQUE€</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    canvas {
+      background-color: white;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+  </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="content">
-    <h1>DARK🕸️__TITOS🕷️ Analyse des Profits</h1>
-    <canvas id="barChart" width="96" height="72"></canvas>
-  </div>
+  <h1>Analyse de Profit sur 12 Jours</h1>
+  <canvas id="barChart" width="600" height="400"></canvas>
+
+  <script>
+    const ctx = document.getElementById('barChart').getContext('2d');
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['J1', 'J2', 'J3', 'J4', 'J5', 'J6', 'J7', 'J8', 'J9', 'J10', 'J11', 'J12'],
+        datasets: [{
+          label: 'Pwofi ($)',
+          data: [100, 120, 90, 150, 170, 200, 180, 210, 190, 220, 240, 260],
+          backgroundColor: [
+            'red', 'orange', 'yellow', 'green', 'blue', 'indigo','violet', 'pink', 'cyan', 'lime', 'gold', 'brown'
+          ],
+          borderColor: 'black',
+          borderWidth: 1
+        ]
+      ,
+      options: 
+        responsive: true,
+        plugins: 
+          legend: 
+            labels: 
+              color: 'white'
+            ,
+          tooltip: 
+            callbacks: 
+              label: function(context) 
+                const val = context.raw;
+                return `{val} USD`;
+              }
+            }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: { color: 'white' }
+          },
+          x: {
+            ticks: { color: 'white' }
+          }
+        }
+      }
+    });
+  </script>
 </body>
 </html>
 ```
