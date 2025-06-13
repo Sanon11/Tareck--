@@ -6,9 +6,9 @@ new Chart(ctx, {
   data: {
     labels: ['Janvye', 'Fevriye', 'Mas', 'Avril'],
     datasets: [{
-      labels: `profit ()',
+      labels: 'Pwofi ()',
       data: [120, 190, 300, 250],
-      backgroundColor: ['black'],
+      backgroundColor: ['blue', 'green', 'yellow', 'orange'],
       borderColor: 'black',
       borderWidth: 1
     ]
