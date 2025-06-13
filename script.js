@@ -4,12 +4,12 @@ const ctx = document.getElementById('barChart').getContext('2d');
 new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ['Janvye', 'Fevriye', 'Mas', 'Avril'],
+    labels: ['monday', 'wednesday', 'saturday', 'truesday'],
     datasets: [{
-      labels: 'Pwofi ()',
+      labels: 'profit ()',
       data: [120, 190, 300, 250],
-      backgroundColor: ['blue', 'green', 'yellow', 'orange'],
-      borderColor: 'black',
+      backgroundColor: ['black'],
+      borderColor: 'blue',
       borderWidth: 1
     ]
   ,
@@ -22,7 +22,7 @@ new Chart(ctx, {
         ,
       tooltip: 
         callbacks: 
-          label: function(context) 
+          labels: function(context) 
             const total = context.dataset.data.reduce((a, b) => a + b, 0);
             const val = context.raw;
             const percent = ((val / total) * 100).toFixed(1);
@@ -35,7 +35,7 @@ new Chart(ctx, {
       y: {
         beginAtZero: true,
         ticks: {
-          color: 'black'
+          color: 'red'
         }
       },
       x: {
