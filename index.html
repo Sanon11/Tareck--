@@ -1,10 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TITO'S STATISTIQUE€</title>
+  <title>Analyse de Profit</title>
   <style>
     body {
       background-color: black;
@@ -23,7 +22,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <h1>Analyse de Profit sur 12 Jours</h1>
+  <h1>Analyse de de Tito's💶 Profit sur 12 Jours</h1>
   <canvas id="barChart" width="600" height="400"></canvas>
 
   <script>
@@ -41,20 +40,21 @@
           ],
           borderColor: 'black',
           borderWidth: 1
-        ]
-      ,
-      options: 
+        }]
+      },
+      options: {
         responsive: true,
-        plugins: 
-          legend: 
-            labels: 
+        plugins: {
+          legend: {
+            labels: {
               color: 'white'
-            ,
-          tooltip: 
-            callbacks: 
-              label: function(context) 
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
                 const val = context.raw;
-                return `{val} USD`;
+                return `${val} USD`;
               }
             }
           }
@@ -73,4 +73,3 @@
   </script>
 </body>
 </html>
-```
