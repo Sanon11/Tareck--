@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rapò & Statistiques</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background-color: #1f1f1f;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #4fc3f7;
+    }
+    .summary {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .box {
+      background: #2c2c2c;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .filters button {
+      background-color: #333;
+      color: white;
+      border: 1px solid #4fc3f7;
+      margin-right: 5px;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .filters button.active {
+      background-color: #4fc3f7;
+      color: #000;
+    }
+    .bar-chart {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      height: 150px;
+      margin-top: 10px;
+    }
+    .bar {
+      background-color: #4fc3f7;
+      width: 30px;
+      border-radius: 3px 3px 0 0;
+    }
+    .labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 8px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #888;
+    }
+    .withdraw-button {
+      background-color:#4fc3f7;
+      color:#000;
+      padding:10px 15px;
+      border:none;
+      border-radius:5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="container" aria-labelledby="dashboard-title">
+    <h2 id="dashboard-title">Dashboard Revenu</h2>
+    <div class="summary">
+      <p><strong>Balance actuelle :</strong> 117,235.39</p>
+      <p><strong>Balance en attente :</strong> 41,380.62</p>
+      <button class="withdraw-button">Demander un retrait</button>
+    </div>
+    <div class="box">
+      <p><strong>Gains totaux :</strong> 170,101.57</p>
+      <ul>
+        <li>Abonnements : 155,659.60</li>
+        <li>Pourboires : 2,157.30</li>
+        <li>Autres : 12,284.67 (+1.1%)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container" aria-labelledby="creator-title">
+    <h2 id="creator-title">Rapò Kreyatè</h2>
+    <div class="summary">
+      <p><strong>Gains totaux :</strong> $7,187,632.95</p>
+    </div>
+    <div class="box filters">
+      <p><strong>Filtrer par période :</strong></p>
+      <button>7 derniers jours</button>
+      <button>30 derniers jours</button>
+      <button>90 derniers jours</button>
+      <button>365 derniers jours</button>
+      <button class="active">2024</button>
+    </div>
+    <div class="box">
+      <p><strong>Tendances des gains</strong></p>
+      <div class="bar-chart" aria-hidden="true">
+        <div class="bar" style="height: 30%;"></div>
+        <div class="bar" style="height: 50%;"></div>
+        <div class="bar" style="height: 70%;"></div>
+        <div class="bar" style="height: 90%;"></div>
+        <div class="bar" style="height: 85%;"></div>
+        <div class="bar" style="height: 80%;"></div>
+        <div class="bar" style="height: 75%;"></div>
+      </div>
+      <div class="labels">
+        <span>Jan</span>
+        <span>Jan 21-27</span>
+        <span>Fév</span>
+        <span>Fév 11-17</span>
+        <span>Mar</span>
+        <span>Avr</span>
+        <span>Mai</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Sponsorisé par <strong>M® Affection</strong>
+  </footer>
+
+</body>
+</html>
